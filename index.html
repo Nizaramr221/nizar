@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>Selamat Ulang Tahun, Cinta</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: 90%;
+      z-index: 2;
+    }
+
+    .open-btn {
+      background-color: #ff6f91;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .open-btn:active {
+      background-color: #ff4f72;
+    }
+
+    .gift-icon {
+      width: 80px;
+      margin-bottom: 15px;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .card {
+      display: none;
+      max-width: 90%;
+      margin: 20px auto;
+      background: white;
+      padding: 5vw;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      color: #d8737f;
+      font-size: 1.6em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #4a3f35;
+      text-align: justify;
+    }
+
+    .footer {
+      margin-top: 30px;
+      text-align: right;
+      font-style: italic;
+      color: #7c6a5c;
+    }
+
+    #password-area {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 80%;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+
+    /* Ornamen grafis */
+    .ornament {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.6;
+      animation: float 10s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+      50% { transform: translateY(-100px) rotate(30deg); opacity: 1; }
+      100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+    }
+
+    .heart { background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png'); }
+    .star { background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png'); }
+    .gift { background-image: url('https://cdn-icons-png.flaticon.com/512/3534/3534094.png'); }
+    .flower { background-image: url('https://cdn-icons-png.flaticon.com/512/888/888879.png'); }
+    .balloon { background-image: url('https://cdn-icons-png.flaticon.com/512/3466/3466757.png'); }
+    .sparkle { background-image: url('https://cdn-icons-png.flaticon.com/512/616/616546.png'); }
+    .swirl { background-image: url('https://cdn-icons-png.flaticon.com/512/864/864685.png'); }
+  </style>
+</head>
+<body>
+
+  <!-- Musik -->
+  <audio autoplay loop>
+    <source src="https://www.example.com/cinta-luar-biasa-instrumental.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Ornamen -->
+  <!-- Kamu bisa generate sebanyak apapun, ini contoh puluhan -->
+  <div class="ornament heart" style="top:90%; left:10%; animation-delay:0s;"></div>
+  <div class="ornament heart" style="top:80%; left:80%; animation-delay:2s;"></div>
+  <div class="ornament heart" style="top:85%; left:50%; animation-delay:4s;"></div>
+  <div class="ornament star" style="top:75%; left:30%; animation-delay:1s;"></div>
+  <div class="ornament star" style="top:95%; left:70%; animation-delay:3s;"></div>
+  <div class="ornament gift" style="top:88%; left:15%; animation-delay:1.5s;"></div>
+  <div class="ornament gift" style="top:92%; left:60%; animation-delay:2.5s;"></div>
+  <div class="ornament heart" style="top:96%; left:40%; animation-delay:3.5s;"></div>
+  <div class="ornament star" style="top:98%; left:85%; animation-delay:4.5s;"></div>
+  <div class="ornament gift" style="top:70%; left:20%; animation-delay:1.2s;"></div>
+  <div class="ornament heart" style="top:93%; left:75%; animation-delay:2.8s;"></div>
+
+  <div class="ornament flower" style="top:91%; left:25%; animation-delay:1s;"></div>
+  <div class="ornament flower" style="top:73%; left:65%; animation-delay:2.3s;"></div>
+  <div class="ornament flower" style="top:80%; left:15%; animation-delay:3.7s;"></div>
+
+  <div class="ornament balloon" style="top:87%; left:30%; animation-delay:1.7s;"></div>
+  <div class="ornament balloon" style="top:75%; left:55%; animation-delay:2.1s;"></div>
+  <div class="ornament balloon" style="top:82%; left:90%; animation-delay:3.2s;"></div>
+
+  <div class="ornament sparkle" style="top:89%; left:22%; animation-delay:1.4s;"></div>
+  <div class="ornament sparkle" style="top:78%; left:72%; animation-delay:2.6s;"></div>
+  <div class="ornament sparkle" style="top:84%; left:48%; animation-delay:3.9s;"></div>
+
+  <div class="ornament swirl" style="top:88%; left:5%; animation-delay:1.9s;"></div>
+  <div class="ornament swirl" style="top:83%; left:95%; animation-delay:2.2s;"></div>
+
+  <!-- Buka kado -->
+  <div class="centered" id="open-area">
+    <img src="https://cdn-icons-png.flaticon.com/512/3534/3534094.png" class="gift-icon" alt="Gift">
+    <br/>
+    <button class="open-btn" onclick="showPassword()">Buka Kadonya 🎁</button>
+  </div>
+
+  <!-- Password -->
+  <div class="centered" id="password-area">
+    <h2 style="color:#d8737f;">Masukkan Password 💖</h2>
+    <input type="password" id="password" placeholder="Passwordnya apa ya?" />
+    <button class="open-btn" onclick="checkPassword()">Lanjutkan</button>
+    <div class="error" id="error-msg"></div>
+  </div>
+
+  <!-- Ucapan -->
+  <div class="card" id="card">
+    <h1>Selamat Ulang Tahun, Sayangku</h1>
+    <p>
+      Di hari yang spesial ini, aku ingin kamu tahu bahwa kamu adalah anugerah terindah dalam hidupku. 
+      Setiap detik bersamamu adalah kenangan yang ingin terus ku simpan, dan setiap senyummu adalah cahaya dalam hariku.
+    </p>
+    <p>
+      Terima kasih telah menjadi kamu — yang sabar, yang tulus, yang selalu hadir. 
+      Aku mencintaimu bukan hanya untuk siapa dirimu hari ini, tapi untuk segala hal yang kita lewati bersama, dan untuk masa depan yang akan kita bangun berdua.
+    </p>
+    <p>
+      Semoga ulang tahunmu penuh dengan tawa, cinta, dan segala hal yang membuat hatimu bahagia. Kamu pantas mendapatkan dunia, dan aku akan berusaha memberikannya satu cinta dalam satu waktu.
+    </p>
+    <div class="footer">
+      Dengan sepenuh cinta,<br>
+      Nizar Aminur Rohman
+    </div>
+  </div>
+
+  <script>
+    function showPassword() {
+      document.getElementById("open-area").style.display = "none";
+      document.getElementById("password-area").style.display = "flex";
+    }
+
+    function checkPassword() {
+      const input = document.getElementById("password").value;
+      const error = document.getElementById("error-msg");
+      if (input === "020520") {
+        document.getElementById("password-area").style.display = "none";
+        document.getElementById("card").style.display = "block";
+      } else {
+        error.textContent = "Ups, password salah. Coba lagi ya 😊";
+      }
+    }
+  </script>
+</body>
+</html>
